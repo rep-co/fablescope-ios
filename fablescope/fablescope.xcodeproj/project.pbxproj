@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6A16B7B12B07A76400BEC818 /* Pacifico-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6A16B7B02B07A76400BEC818 /* Pacifico-Regular.ttf */; };
 		6A2F8E442B03BA5100D05A14 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2F8E432B03BA5100D05A14 /* AppDelegate.swift */; };
 		6A2F8E462B03BA5100D05A14 /* MainScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2F8E452B03BA5100D05A14 /* MainScreenViewController.swift */; };
 		6A2F8E4B2B03BA5200D05A14 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A2F8E4A2B03BA5200D05A14 /* Assets.xcassets */; };
@@ -16,7 +15,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		6A16B7B02B07A76400BEC818 /* Pacifico-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Pacifico-Regular.ttf"; path = "../../../../Downloads/Pacifico/Pacifico-Regular.ttf"; sourceTree = "<group>"; };
 		6A2F8E402B03BA5100D05A14 /* fablescope.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fablescope.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A2F8E432B03BA5100D05A14 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6A2F8E452B03BA5100D05A14 /* MainScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewController.swift; sourceTree = "<group>"; };
@@ -37,18 +35,9 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		6A16B7AF2B07A74100BEC818 /* Fonts */ = {
-			isa = PBXGroup;
-			children = (
-				6A16B7B02B07A76400BEC818 /* Pacifico-Regular.ttf */,
-			);
-			path = Fonts;
-			sourceTree = "<group>";
-		};
 		6A2F8E372B03BA5100D05A14 = {
 			isa = PBXGroup;
 			children = (
-				6A16B7AF2B07A74100BEC818 /* Fonts */,
 				6A2F8E422B03BA5100D05A14 /* fablescope */,
 				6A2F8E412B03BA5100D05A14 /* Products */,
 			);
@@ -65,6 +54,7 @@
 		6A2F8E422B03BA5100D05A14 /* fablescope */ = {
 			isa = PBXGroup;
 			children = (
+				6A3ED1342B0C066E006B2803 /* Fonts */,
 				6A2F8E432B03BA5100D05A14 /* AppDelegate.swift */,
 				6AA6AAA52B065FB000792F80 /* Main Screen */,
 				6A2F8E4A2B03BA5200D05A14 /* Assets.xcassets */,
@@ -72,6 +62,13 @@
 				6A2F8E4F2B03BA5200D05A14 /* Info.plist */,
 			);
 			path = fablescope;
+			sourceTree = "<group>";
+		};
+		6A3ED1342B0C066E006B2803 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		6AA6AAA52B065FB000792F80 /* Main Screen */ = {
@@ -141,7 +138,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6A16B7B12B07A76400BEC818 /* Pacifico-Regular.ttf in Resources */,
 				6A2F8E4E2B03BA5200D05A14 /* LaunchScreen.storyboard in Resources */,
 				6A2F8E4B2B03BA5200D05A14 /* Assets.xcassets in Resources */,
 			);
