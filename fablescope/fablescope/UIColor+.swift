@@ -8,6 +8,6 @@
 
 import UIKit
 
-extension UIColor{
+extension UIColor {
     static let fableGreen = UIColor(named: "fable_green")
 }
