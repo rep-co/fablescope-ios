@@ -8,4 +8,5 @@ lint:
 	@swift-format lint \
 	--ignore-unparsable-files \
 	--recursive \
+	--strict \
 	fablescope
