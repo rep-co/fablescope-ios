@@ -8,18 +8,28 @@
 
 /* Begin PBXBuildFile section */
 		6A2F8E442B03BA5100D05A14 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2F8E432B03BA5100D05A14 /* AppDelegate.swift */; };
-		6A2F8E462B03BA5100D05A14 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2F8E452B03BA5100D05A14 /* ViewController.swift */; };
+		6A2F8E462B03BA5100D05A14 /* MainScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2F8E452B03BA5100D05A14 /* MainScreenViewController.swift */; };
 		6A2F8E4B2B03BA5200D05A14 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A2F8E4A2B03BA5200D05A14 /* Assets.xcassets */; };
 		6A2F8E4E2B03BA5200D05A14 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A2F8E4C2B03BA5200D05A14 /* LaunchScreen.storyboard */; };
+		6A3ED13D2B0CF6FA006B2803 /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3ED13A2B0CF6FA006B2803 /* UIFont+.swift */; };
+		6A3ED13E2B0CF6FA006B2803 /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3ED13B2B0CF6FA006B2803 /* UIImage+.swift */; };
+		6A3ED13F2B0CF6FA006B2803 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3ED13C2B0CF6FA006B2803 /* UIColor+.swift */; };
+		6A3ED1412B0CF985006B2803 /* Pacifico-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6A3ED1402B0CF985006B2803 /* Pacifico-Regular.ttf */; };
+		6AA6AAA42B06468500792F80 /* MenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA6AAA32B06468500792F80 /* MenuButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		6A2F8E402B03BA5100D05A14 /* fablescope.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fablescope.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A2F8E432B03BA5100D05A14 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		6A2F8E452B03BA5100D05A14 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		6A2F8E452B03BA5100D05A14 /* MainScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewController.swift; sourceTree = "<group>"; };
 		6A2F8E4A2B03BA5200D05A14 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6A2F8E4D2B03BA5200D05A14 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6A2F8E4F2B03BA5200D05A14 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6A3ED13A2B0CF6FA006B2803 /* UIFont+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
+		6A3ED13B2B0CF6FA006B2803 /* UIImage+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
+		6A3ED13C2B0CF6FA006B2803 /* UIColor+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
+		6A3ED1402B0CF985006B2803 /* Pacifico-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pacifico-Regular.ttf"; sourceTree = "<group>"; };
+		6AA6AAA32B06468500792F80 /* MenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,13 +62,42 @@
 		6A2F8E422B03BA5100D05A14 /* fablescope */ = {
 			isa = PBXGroup;
 			children = (
+				6A3ED1392B0CF6FA006B2803 /* Extensions */,
+				6A3ED1342B0C066E006B2803 /* Fonts */,
 				6A2F8E432B03BA5100D05A14 /* AppDelegate.swift */,
-				6A2F8E452B03BA5100D05A14 /* ViewController.swift */,
+				6AA6AAA52B065FB000792F80 /* Main Screen */,
 				6A2F8E4A2B03BA5200D05A14 /* Assets.xcassets */,
 				6A2F8E4C2B03BA5200D05A14 /* LaunchScreen.storyboard */,
 				6A2F8E4F2B03BA5200D05A14 /* Info.plist */,
 			);
 			path = fablescope;
+			sourceTree = "<group>";
+		};
+		6A3ED1342B0C066E006B2803 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				6A3ED1402B0CF985006B2803 /* Pacifico-Regular.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		6A3ED1392B0CF6FA006B2803 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				6A3ED13A2B0CF6FA006B2803 /* UIFont+.swift */,
+				6A3ED13B2B0CF6FA006B2803 /* UIImage+.swift */,
+				6A3ED13C2B0CF6FA006B2803 /* UIColor+.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		6AA6AAA52B065FB000792F80 /* Main Screen */ = {
+			isa = PBXGroup;
+			children = (
+				6A2F8E452B03BA5100D05A14 /* MainScreenViewController.swift */,
+				6AA6AAA32B06468500792F80 /* MenuButton.swift */,
+			);
+			path = "Main Screen";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,6 +110,7 @@
 				6A2F8E3C2B03BA5100D05A14 /* Sources */,
 				6A2F8E3D2B03BA5100D05A14 /* Frameworks */,
 				6A2F8E3E2B03BA5100D05A14 /* Resources */,
+				6A3ED1422B0D0C47006B2803 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -119,6 +159,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A3ED1412B0CF985006B2803 /* Pacifico-Regular.ttf in Resources */,
 				6A2F8E4E2B03BA5200D05A14 /* LaunchScreen.storyboard in Resources */,
 				6A2F8E4B2B03BA5200D05A14 /* Assets.xcassets in Resources */,
 			);
@@ -126,13 +167,37 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		6A3ED1422B0D0C47006B2803 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint > /dev/null; then\nswiftlint\nelse echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		6A2F8E3C2B03BA5100D05A14 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6A2F8E462B03BA5100D05A14 /* ViewController.swift in Sources */,
+				6A3ED13D2B0CF6FA006B2803 /* UIFont+.swift in Sources */,
+				6AA6AAA42B06468500792F80 /* MenuButton.swift in Sources */,
+				6A3ED13E2B0CF6FA006B2803 /* UIImage+.swift in Sources */,
+				6A2F8E462B03BA5100D05A14 /* MainScreenViewController.swift in Sources */,
 				6A2F8E442B03BA5100D05A14 /* AppDelegate.swift in Sources */,
+				6A3ED13F2B0CF6FA006B2803 /* UIColor+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
