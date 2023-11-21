@@ -8,6 +8,7 @@
 
 import UIKit
 
+// swiftlint:disable force_cast
 extension UIImage {
     static let magicWandIcon = UIImage(named: "magic_wand_icon")!
     static let bookIcon = UIImage(named: "book_icon")!
