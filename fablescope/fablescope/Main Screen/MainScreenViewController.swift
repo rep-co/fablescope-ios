@@ -72,7 +72,6 @@ private extension MainScreenViewController {
         buttonStackView.spacing = Const.buttonStackViewSpacing
         buttonStackView.alignment = .fill
         buttonStackView.distribution = .fillEqually
-        
     }
     
     func setupButton() {
@@ -80,9 +79,7 @@ private extension MainScreenViewController {
         autoButton.backgroundColor = .fableGreen
         createButton.configure(text: "Cделай сам", image: .magicWandIcon)
         autoButton.configure(text: "Авто", image: .bookIcon)
-       
     }
-    
 }
 
 extension MainScreenViewController {

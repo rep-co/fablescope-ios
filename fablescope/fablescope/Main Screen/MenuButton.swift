@@ -54,7 +54,7 @@ private extension MenuButton {
             label.topAnchor.constraint(equalTo: imageView.bottomAnchor),
             label.rightAnchor.constraint(equalTo: self.rightAnchor,constant: Const.labelRightInset),
             label.leftAnchor.constraint(equalTo: self.leftAnchor,constant: Const.labelLeftInset)
-            ])
+        ])
     }
     
     func setupLabel() {
@@ -68,6 +68,7 @@ private extension MenuButton {
         imageView.contentMode = .scaleAspectFit
     }
 }
+
 extension MenuButton {
     private enum Const {
         static let ImageViewLeftInset: CGFloat = 53
