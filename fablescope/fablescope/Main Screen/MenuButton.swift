@@ -11,16 +11,16 @@ import UIKit
 final class MenuButton: UIControl {
     private let label = UILabel()
     private let imageView = UIImageView()
-    
+
     override init(frame: CGRect) {
         super.init(frame: .zero)
         setupUI()
     }
-    
+
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     func configure(text: String, image: UIImage) {
         label.text = text
         imageView.image = image
@@ -36,33 +36,39 @@ private extension MenuButton {
         setupImageView()
         self.layer.cornerRadius = 16
     }
-    
+
     func addSubviews() {
         label.translatesAutoresizingMaskIntoConstraints = false
         imageView.translatesAutoresizingMaskIntoConstraints = false
         addSubview(label)
         addSubview(imageView)
     }
-    
+
     func setupConstraints() {
         NSLayoutConstraint.activate([
-            imageView.topAnchor.constraint(equalTo: self.topAnchor,constant: Const.imageViewTopInset),
-            imageView.leftAnchor.constraint(equalTo: self.leftAnchor,constant: Const.ImageViewLeftInset),
-            imageView.rightAnchor.constraint(equalTo: self.rightAnchor,constant: Const.ImageViewRightInset),
-            
-            label.bottomAnchor.constraint(equalTo: self.bottomAnchor,constant: Const.labelBottomInset),
+            imageView.topAnchor.constraint(equalTo: self.topAnchor,
+                                           constant: Const.imageViewTopInset),
+            imageView.leftAnchor.constraint(equalTo: self.leftAnchor,
+                                            constant: Const.ImageViewLeftInset),
+            imageView.rightAnchor.constraint(equalTo: self.rightAnchor,
+                                             constant: Const.ImageViewRightInset),
+
+            label.bottomAnchor.constraint(equalTo: self.bottomAnchor,
+                                          constant: Const.labelBottomInset),
             label.topAnchor.constraint(equalTo: imageView.bottomAnchor),
-            label.rightAnchor.constraint(equalTo: self.rightAnchor,constant: Const.labelRightInset),
-            label.leftAnchor.constraint(equalTo: self.leftAnchor,constant: Const.labelLeftInset)
+            label.rightAnchor.constraint(equalTo: self.rightAnchor,
+                                         constant: Const.labelRightInset),
+            label.leftAnchor.constraint(equalTo: self.leftAnchor,
+                                        constant: Const.labelLeftInset)
         ])
     }
-    
+
     func setupLabel() {
         label.textColor = .white
         label.textAlignment = .center
         label.font = .pacificoRegular
     }
-    
+
     func setupImageView() {
         imageView.tintColor = .white
         imageView.contentMode = .scaleAspectFit
