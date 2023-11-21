@@ -49,9 +49,9 @@ private extension MenuButton {
             imageView.topAnchor.constraint(equalTo: self.topAnchor,
                                            constant: Const.imageViewTopInset),
             imageView.leftAnchor.constraint(equalTo: self.leftAnchor,
-                                            constant: Const.ImageViewLeftInset),
+                                            constant: Const.imageViewLeftInset),
             imageView.rightAnchor.constraint(equalTo: self.rightAnchor,
-                                             constant: Const.ImageViewRightInset),
+                                             constant: Const.imageViewRightInset),
 
             label.bottomAnchor.constraint(equalTo: self.bottomAnchor,
                                           constant: Const.labelBottomInset),
@@ -77,8 +77,8 @@ private extension MenuButton {
 
 extension MenuButton {
     private enum Const {
-        static let ImageViewLeftInset: CGFloat = 53
-        static let ImageViewRightInset: CGFloat = -53
+        static let imageViewLeftInset: CGFloat = 53
+        static let imageViewRightInset: CGFloat = -53
         static let imageViewTopInset: CGFloat = 42
         static let labelBottomInset: CGFloat = -20
         static let labelRightInset: CGFloat = -10
