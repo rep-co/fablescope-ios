@@ -53,14 +53,14 @@ private extension MainScreenViewController {
                                                   constant: Const.buttonStackViewLeftInset),
             buttonStackView.rightAnchor.constraint(equalTo: view.rightAnchor,
                                                    constant: Const.buttonStackViewRightInset),
-            buttonStackView.heightAnchor.constraint(equalToConstant: Const.buttonStackViewHeightInset),
+            buttonStackView.heightAnchor.constraint(equalToConstant: Const.buttonStackViewHeight),
             buttonStackView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
 
-            autoButton.widthAnchor.constraint(equalToConstant: Const.autoButtonInset),
-            autoButton.heightAnchor.constraint(equalToConstant: Const.autoButtonInset),
+            autoButton.widthAnchor.constraint(equalToConstant: Const.autoButtonHeigh),
+            autoButton.heightAnchor.constraint(equalToConstant: Const.autoButtonHeigh),
 
-            createButton.widthAnchor.constraint(equalToConstant: Const.createButtonInset),
-            createButton.heightAnchor.constraint(equalToConstant: Const.createButtonInset)
+            createButton.widthAnchor.constraint(equalToConstant: Const.createButtonHeigh),
+            createButton.heightAnchor.constraint(equalToConstant: Const.createButtonHeigh)
         ])
     }
 
@@ -88,9 +88,9 @@ extension MainScreenViewController {
     private enum Const {
         static let buttonStackViewLeftInset: CGFloat = 20
         static let buttonStackViewRightInset: CGFloat = -20
-        static let buttonStackViewHeightInset: CGFloat = 166
-        static let createButtonInset: CGFloat = 166
-        static let autoButtonInset: CGFloat = 166
+        static let buttonStackViewHeight: CGFloat = 166
+        static let createButtonHeigh: CGFloat = 166
+        static let autoButtonHeigh: CGFloat = 166
         static let buttonStackViewSpacing: CGFloat = 20
     }
 }
