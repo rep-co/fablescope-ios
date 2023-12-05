@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = MainScreenViewController()
+        window?.rootViewController = UINavigationController(rootViewController: MainScreenViewController())
         window?.makeKeyAndVisible()
         return true
     }

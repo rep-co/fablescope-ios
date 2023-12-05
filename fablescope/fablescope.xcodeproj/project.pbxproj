@@ -7,10 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6A1EC8D82B0E113B00B91CA1 /* CategoryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A1EC8D72B0E113B00B91CA1 /* CategoryButton.swift */; };
+		6A1EC8DA2B0E118500B91CA1 /* FormScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A1EC8D92B0E118500B91CA1 /* FormScreenViewController.swift */; };
 		6A2F8E442B03BA5100D05A14 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2F8E432B03BA5100D05A14 /* AppDelegate.swift */; };
 		6A2F8E462B03BA5100D05A14 /* MainScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2F8E452B03BA5100D05A14 /* MainScreenViewController.swift */; };
 		6A2F8E4B2B03BA5200D05A14 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A2F8E4A2B03BA5200D05A14 /* Assets.xcassets */; };
 		6A2F8E4E2B03BA5200D05A14 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A2F8E4C2B03BA5200D05A14 /* LaunchScreen.storyboard */; };
+		6A321CEE2B1DE6A900219D87 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A321CED2B1DE6A800219D87 /* CollectionViewCell.swift */; };
 		6A3ED13D2B0CF6FA006B2803 /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3ED13A2B0CF6FA006B2803 /* UIFont+.swift */; };
 		6A3ED13E2B0CF6FA006B2803 /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3ED13B2B0CF6FA006B2803 /* UIImage+.swift */; };
 		6A3ED13F2B0CF6FA006B2803 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3ED13C2B0CF6FA006B2803 /* UIColor+.swift */; };
@@ -19,12 +22,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6A1EC8D72B0E113B00B91CA1 /* CategoryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryButton.swift; sourceTree = "<group>"; };
+		6A1EC8D92B0E118500B91CA1 /* FormScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormScreenViewController.swift; sourceTree = "<group>"; };
 		6A2F8E402B03BA5100D05A14 /* fablescope.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fablescope.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A2F8E432B03BA5100D05A14 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6A2F8E452B03BA5100D05A14 /* MainScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewController.swift; sourceTree = "<group>"; };
 		6A2F8E4A2B03BA5200D05A14 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6A2F8E4D2B03BA5200D05A14 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6A2F8E4F2B03BA5200D05A14 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6A321CED2B1DE6A800219D87 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		6A3ED13A2B0CF6FA006B2803 /* UIFont+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
 		6A3ED13B2B0CF6FA006B2803 /* UIImage+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
 		6A3ED13C2B0CF6FA006B2803 /* UIColor+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
@@ -43,6 +49,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6A1EC8D42B0E0FFF00B91CA1 /* Form Screen */ = {
+			isa = PBXGroup;
+			children = (
+				6A1EC8D92B0E118500B91CA1 /* FormScreenViewController.swift */,
+				6A321CED2B1DE6A800219D87 /* CollectionViewCell.swift */,
+				6A1EC8D72B0E113B00B91CA1 /* CategoryButton.swift */,
+			);
+			path = "Form Screen";
+			sourceTree = "<group>";
+		};
 		6A2F8E372B03BA5100D05A14 = {
 			isa = PBXGroup;
 			children = (
@@ -65,6 +81,7 @@
 				6A3ED1392B0CF6FA006B2803 /* Extensions */,
 				6A3ED1342B0C066E006B2803 /* Fonts */,
 				6A2F8E432B03BA5100D05A14 /* AppDelegate.swift */,
+				6A1EC8D42B0E0FFF00B91CA1 /* Form Screen */,
 				6AA6AAA52B065FB000792F80 /* Main Screen */,
 				6A2F8E4A2B03BA5200D05A14 /* Assets.xcassets */,
 				6A2F8E4C2B03BA5200D05A14 /* LaunchScreen.storyboard */,
@@ -193,9 +210,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				6A3ED13D2B0CF6FA006B2803 /* UIFont+.swift in Sources */,
+				6A1EC8D82B0E113B00B91CA1 /* CategoryButton.swift in Sources */,
+				6A321CEE2B1DE6A900219D87 /* CollectionViewCell.swift in Sources */,
 				6AA6AAA42B06468500792F80 /* MenuButton.swift in Sources */,
 				6A3ED13E2B0CF6FA006B2803 /* UIImage+.swift in Sources */,
 				6A2F8E462B03BA5100D05A14 /* MainScreenViewController.swift in Sources */,
+				6A1EC8DA2B0E118500B91CA1 /* FormScreenViewController.swift in Sources */,
 				6A2F8E442B03BA5100D05A14 /* AppDelegate.swift in Sources */,
 				6A3ED13F2B0CF6FA006B2803 /* UIColor+.swift in Sources */,
 			);

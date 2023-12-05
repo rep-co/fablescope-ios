@@ -81,6 +81,11 @@ private extension MainScreenViewController {
         autoButton.backgroundColor = .fableGreen
         createButton.configure(text: "Cделай сам", image: .magicWandIcon)
         autoButton.configure(text: "Авто", image: .bookIcon)
+        createButton.addTarget(self, action: #selector(onClick), for: .touchUpInside)
+    }
+
+    @objc func onClick() {
+        navigationController?.pushViewController(FromScreenViewController(), animated: true)
     }
 }
 
@@ -93,4 +98,5 @@ extension MainScreenViewController {
         static let autoButtonHeigh: CGFloat = 166
         static let buttonStackViewSpacing: CGFloat = 20
     }
+
 }
