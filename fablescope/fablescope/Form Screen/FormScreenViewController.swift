@@ -1,36 +1,36 @@
-
 import UIKit
 
-struct CastomData {
+struct ViewModel {
     var image: UIImage
 }
 
-class FromScreenViewController: UIViewController {
+final class FromScreenViewController: UIViewController {
     private let createButton = ReadyButton()
     let data = [
-        CastomData( image: .witchHat ),
-        CastomData( image: .magicWandIcon ),
-        CastomData( image: .crown ),
-        CastomData( image: .witchHat ),
-        CastomData( image: .crown ),
-        CastomData( image: .magicWandIcon ),
-        CastomData( image: .witchHat ),
-        CastomData( image: .magicWandIcon ),
-        CastomData( image: .crown ),
-        CastomData( image: .witchHat ),
-        CastomData( image: .crown ),
-        CastomData( image: .magicWandIcon ),
-        CastomData( image: .witchHat ),
-        CastomData( image: .magicWandIcon ),
-        CastomData( image: .crown ),
-        CastomData( image: .witchHat ),
-        CastomData( image: .crown ),
-        CastomData( image: .magicWandIcon ),CastomData( image: .witchHat ),
-        CastomData( image: .magicWandIcon ),
-        CastomData( image: .crown ),
-        CastomData( image: .witchHat ),
-        CastomData( image: .crown ),
-        CastomData( image: .magicWandIcon )
+        ViewModel( image: .witchHat ),
+        ViewModel( image: .magicWandIcon ),
+        ViewModel( image: .crown ),
+        ViewModel( image: .witchHat ),
+        ViewModel( image: .crown ),
+        ViewModel( image: .magicWandIcon ),
+        ViewModel( image: .witchHat ),
+        ViewModel( image: .magicWandIcon ),
+        ViewModel( image: .crown ),
+        ViewModel( image: .witchHat ),
+        ViewModel( image: .crown ),
+        ViewModel( image: .magicWandIcon ),
+        ViewModel( image: .witchHat ),
+        ViewModel( image: .magicWandIcon ),
+        ViewModel( image: .crown ),
+        ViewModel( image: .witchHat ),
+        ViewModel( image: .crown ),
+        ViewModel( image: .magicWandIcon ),
+        ViewModel( image: .witchHat ),
+        ViewModel( image: .magicWandIcon ),
+        ViewModel( image: .crown ),
+        ViewModel( image: .witchHat ),
+        ViewModel( image: .crown ),
+        ViewModel( image: .magicWandIcon )
     ]
     private let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -39,7 +39,7 @@ class FromScreenViewController: UIViewController {
         cv.register(CollectionViewCell.self, forCellWithReuseIdentifier: "cell")
         return cv
     }()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -51,7 +51,7 @@ private extension FromScreenViewController{
     func setupUI() {
         addSubwiews()
     }
-
+    
     func addSubwiews() {
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -65,7 +65,7 @@ private extension FromScreenViewController{
         ]
         setupConstraints()
     }
-
+    
     func setupConstraints() {
         NSLayoutConstraint.activate([
             createButton.heightAnchor.constraint(equalToConstant: Const.createButtonHeight),
@@ -75,28 +75,27 @@ private extension FromScreenViewController{
                                                constant: Const.createButtonLeftInset),
             createButton.bottomAnchor.constraint(equalTo: view.bottomAnchor,
                                                  constant: Const.createButtonBottomInset),
-
+            
             collectionView.topAnchor.constraint(equalTo: view.topAnchor),
             collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             collectionView.leftAnchor.constraint(equalTo: view.leftAnchor),
             collectionView.rightAnchor.constraint(equalTo: view.rightAnchor)
-            ])
+        ])
     }
 }
 
 extension FromScreenViewController: UICollectionViewDataSource, UICollectionViewDelegate {
-
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return data.count
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CollectionViewCell
         cell.data = self.data[indexPath.row]
-        cell.backgroundColor = .fableGreen
         return cell
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath) as? CollectionViewCell
         if cell?.isSelectedCell == false {
@@ -109,13 +108,13 @@ extension FromScreenViewController: UICollectionViewDataSource, UICollectionView
 
 extension FromScreenViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.width/3.75, height: collectionView.frame.width/3.75)
+        return CGSize(width: collectionView.frame.width/Const.collectionViewrRatio, height: collectionView.frame.width/Const.collectionViewrRatio)
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-           return UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
-        }
-
+        return UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
+    }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 20
     }
@@ -127,6 +126,6 @@ extension FromScreenViewController {
         static let createButtonRightInset: CGFloat = -20
         static let createButtonHeight: CGFloat = 59
         static let createButtonBottomInset: CGFloat = -40
+        static let collectionViewrRatio: CGFloat = 3.75
     }
-
 }
