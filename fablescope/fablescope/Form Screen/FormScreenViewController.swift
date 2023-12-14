@@ -5,32 +5,32 @@ struct ViewModel {
 }
 
 final class FromScreenViewController: UIViewController {
-    private let createButton = ReadyButton()
+    private let submitButton = SubmitButton()
     let data = [
-        ViewModel( image: .witchHat ),
-        ViewModel( image: .magicWandIcon ),
-        ViewModel( image: .crown ),
-        ViewModel( image: .witchHat ),
-        ViewModel( image: .crown ),
-        ViewModel( image: .magicWandIcon ),
-        ViewModel( image: .witchHat ),
-        ViewModel( image: .magicWandIcon ),
-        ViewModel( image: .crown ),
-        ViewModel( image: .witchHat ),
-        ViewModel( image: .crown ),
-        ViewModel( image: .magicWandIcon ),
-        ViewModel( image: .witchHat ),
-        ViewModel( image: .magicWandIcon ),
-        ViewModel( image: .crown ),
-        ViewModel( image: .witchHat ),
-        ViewModel( image: .crown ),
-        ViewModel( image: .magicWandIcon ),
-        ViewModel( image: .witchHat ),
-        ViewModel( image: .magicWandIcon ),
-        ViewModel( image: .crown ),
-        ViewModel( image: .witchHat ),
-        ViewModel( image: .crown ),
-        ViewModel( image: .magicWandIcon )
+        ViewModel(image: .witchHat),
+        ViewModel(image: .magicWandIcon),
+        ViewModel(image: .crown),
+        ViewModel(image: .witchHat),
+        ViewModel(image: .crown),
+        ViewModel(image: .magicWandIcon),
+        ViewModel(image: .witchHat),
+        ViewModel(image: .magicWandIcon),
+        ViewModel(image: .crown),
+        ViewModel(image: .witchHat),
+        ViewModel(image: .crown),
+        ViewModel(image: .magicWandIcon),
+        ViewModel(image: .witchHat),
+        ViewModel(image: .magicWandIcon),
+        ViewModel(image: .crown),
+        ViewModel(image: .witchHat),
+        ViewModel(image: .crown),
+        ViewModel(image: .magicWandIcon),
+        ViewModel(image: .witchHat),
+        ViewModel(image: .magicWandIcon),
+        ViewModel(image: .crown),
+        ViewModel(image: .witchHat),
+        ViewModel(image: .crown),
+        ViewModel(image: .magicWandIcon)
     ]
     private let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -43,12 +43,12 @@ final class FromScreenViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        title = "Выбери все что хочешь"
     }
 }
 
 private extension FromScreenViewController{
     func setupUI() {
+        title = "Выбери все что хочешь"
         addSubwiews()
     }
     
@@ -57,8 +57,8 @@ private extension FromScreenViewController{
         collectionView.dataSource = self
         view.addSubview(collectionView)
         collectionView.backgroundColor = .white
-        view.addSubview(createButton)
-        createButton.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(submitButton)
+        submitButton.translatesAutoresizingMaskIntoConstraints = false
         navigationController?.navigationBar.titleTextAttributes = [
             .foregroundColor: UIColor.black,
             .font: UIFont.pacificoRegular
@@ -68,12 +68,12 @@ private extension FromScreenViewController{
     
     func setupConstraints() {
         NSLayoutConstraint.activate([
-            createButton.heightAnchor.constraint(equalToConstant: Const.createButtonHeight),
-            createButton.rightAnchor.constraint(equalTo: view.rightAnchor,
+            submitButton.heightAnchor.constraint(equalToConstant: Const.createButtonHeight),
+            submitButton.rightAnchor.constraint(equalTo: view.rightAnchor,
                                                 constant: Const.createButtonRightInset),
-            createButton.leftAnchor.constraint(equalTo: view.leftAnchor,
+            submitButton.leftAnchor.constraint(equalTo: view.leftAnchor,
                                                constant: Const.createButtonLeftInset),
-            createButton.bottomAnchor.constraint(equalTo: view.bottomAnchor,
+            submitButton.bottomAnchor.constraint(equalTo: view.bottomAnchor,
                                                  constant: Const.createButtonBottomInset),
             
             collectionView.topAnchor.constraint(equalTo: view.topAnchor),
@@ -107,6 +107,7 @@ extension FromScreenViewController: UICollectionViewDataSource, UICollectionView
 }
 
 extension FromScreenViewController: UICollectionViewDelegateFlowLayout {
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.frame.width/Const.collectionViewrRatio, height: collectionView.frame.width/Const.collectionViewrRatio)
     }
@@ -121,6 +122,7 @@ extension FromScreenViewController: UICollectionViewDelegateFlowLayout {
 }
 
 extension FromScreenViewController {
+    
     private enum Const {
         static let createButtonLeftInset: CGFloat = 20
         static let createButtonRightInset: CGFloat = -20

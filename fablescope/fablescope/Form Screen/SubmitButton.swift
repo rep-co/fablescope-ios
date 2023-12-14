@@ -1,6 +1,6 @@
 import UIKit
 
-final class ReadyButton: UIControl {
+final class SubmitButton: UIControl {
     private let label = UILabel()
     
     override init(frame: CGRect) {
@@ -13,10 +13,10 @@ final class ReadyButton: UIControl {
     }
 }
 
-private extension ReadyButton {
+private extension SubmitButton {
     func setupUI() {
         addSubwiews()
-        setupReadyButton()
+        setupSubmitButton()
         setupConstraints()
         setupLabel()
         self.layer.cornerRadius = 16
@@ -27,7 +27,7 @@ private extension ReadyButton {
         label.translatesAutoresizingMaskIntoConstraints = false
     }
     
-    func setupReadyButton() {
+    func setupSubmitButton() {
         backgroundColor = .fableGreen
         layer.borderWidth = 3
         layer.borderColor = UIColor.white.cgColor
