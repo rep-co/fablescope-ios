@@ -1,60 +1,63 @@
 import UIKit
 
-struct ViewModel {
-    var image: UIImage
-}
-
-final class FromScreenViewController: UIViewController {
+final class FormScreenViewController: UIViewController {
     private let submitButton = SubmitButton()
+    
     let data = [
-        ViewModel(image: .witchHat),
-        ViewModel(image: .magicWandIcon),
-        ViewModel(image: .crown),
-        ViewModel(image: .witchHat),
-        ViewModel(image: .crown),
-        ViewModel(image: .magicWandIcon),
-        ViewModel(image: .witchHat),
-        ViewModel(image: .magicWandIcon),
-        ViewModel(image: .crown),
-        ViewModel(image: .witchHat),
-        ViewModel(image: .crown),
-        ViewModel(image: .magicWandIcon),
-        ViewModel(image: .witchHat),
-        ViewModel(image: .magicWandIcon),
-        ViewModel(image: .crown),
-        ViewModel(image: .witchHat),
-        ViewModel(image: .crown),
-        ViewModel(image: .magicWandIcon),
-        ViewModel(image: .witchHat),
-        ViewModel(image: .magicWandIcon),
-        ViewModel(image: .crown),
-        ViewModel(image: .witchHat),
-        ViewModel(image: .crown),
-        ViewModel(image: .magicWandIcon)
+        CollectionViewCell.ViewModel(image: .witchHat),
+        CollectionViewCell.ViewModel(image: .magicWandIcon),
+        CollectionViewCell.ViewModel(image: .crown),
+        CollectionViewCell.ViewModel(image: .witchHat),
+        CollectionViewCell.ViewModel(image: .crown),
+        CollectionViewCell.ViewModel(image: .magicWandIcon),
+        CollectionViewCell.ViewModel(image: .witchHat),
+        CollectionViewCell.ViewModel(image: .magicWandIcon),
+        CollectionViewCell.ViewModel(image: .crown),
+        CollectionViewCell.ViewModel(image: .witchHat),
+        CollectionViewCell.ViewModel(image: .crown),
+        CollectionViewCell.ViewModel(image: .magicWandIcon),
+        CollectionViewCell.ViewModel(image: .witchHat),
+        CollectionViewCell.ViewModel(image: .magicWandIcon),
+        CollectionViewCell.ViewModel(image: .crown),
+        CollectionViewCell.ViewModel(image: .witchHat),
+        CollectionViewCell.ViewModel(image: .crown),
+        CollectionViewCell.ViewModel(image: .magicWandIcon),
+        CollectionViewCell.ViewModel(image: .witchHat),
+        CollectionViewCell.ViewModel(image: .magicWandIcon),
+        CollectionViewCell.ViewModel(image: .crown),
+        CollectionViewCell.ViewModel(image: .witchHat),
+        CollectionViewCell.ViewModel(image: .crown),
+        CollectionViewCell.ViewModel(image: .magicWandIcon)
     ]
     private let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
         cv.translatesAutoresizingMaskIntoConstraints = false
-        cv.register(CollectionViewCell.self, forCellWithReuseIdentifier: "cell")
         return cv
     }()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        addSubviews()
+        setupConstraints()
+        setupCollectionView()
     }
 }
 
-private extension FromScreenViewController{
-    func setupUI() {
-        title = "Выбери все что хочешь"
-        addSubwiews()
-    }
-    
-    func addSubwiews() {
+private extension FormScreenViewController{
+
+    func setupCollectionView(){
         collectionView.delegate = self
         collectionView.dataSource = self
+    }
+
+    func setupUI() {
+        title = "Выбери все что хочешь"
+        collectionView.register(CollectionViewCell.self, forCellWithReuseIdentifier: "cell")
+    }
+
+    func addSubviews() {
         view.addSubview(collectionView)
         collectionView.backgroundColor = .white
         view.addSubview(submitButton)
@@ -63,9 +66,8 @@ private extension FromScreenViewController{
             .foregroundColor: UIColor.black,
             .font: UIFont.pacificoRegular
         ]
-        setupConstraints()
     }
-    
+
     func setupConstraints() {
         NSLayoutConstraint.activate([
             submitButton.heightAnchor.constraint(equalToConstant: Const.createButtonHeight),
@@ -75,7 +77,7 @@ private extension FromScreenViewController{
                                                constant: Const.createButtonLeftInset),
             submitButton.bottomAnchor.constraint(equalTo: view.bottomAnchor,
                                                  constant: Const.createButtonBottomInset),
-            
+
             collectionView.topAnchor.constraint(equalTo: view.topAnchor),
             collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             collectionView.leftAnchor.constraint(equalTo: view.leftAnchor),
@@ -84,50 +86,46 @@ private extension FromScreenViewController{
     }
 }
 
-extension FromScreenViewController: UICollectionViewDataSource, UICollectionViewDelegate {
-    
+extension FormScreenViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return data.count
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CollectionViewCell
         cell.data = self.data[indexPath.row]
         return cell
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath) as? CollectionViewCell
-        if cell?.isSelectedCell == false {
-            cell?.isSelectedCell = true
-        } else {
-            cell?.isSelectedCell = false
-        }
+        cell?.isSelectedCell.toggle()
     }
 }
 
-extension FromScreenViewController: UICollectionViewDelegateFlowLayout {
-    
+extension FormScreenViewController: UICollectionViewDelegateFlowLayout {
+
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.width/Const.collectionViewrRatio, height: collectionView.frame.width/Const.collectionViewrRatio)
+        return CGSize(width: collectionView.frame.width/Const.collectionViewRatio, height: collectionView.frame.width/Const.collectionViewRatio)
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 20
     }
 }
 
-extension FromScreenViewController {
-    
+extension FormScreenViewController {
+
     private enum Const {
         static let createButtonLeftInset: CGFloat = 20
         static let createButtonRightInset: CGFloat = -20
         static let createButtonHeight: CGFloat = 59
         static let createButtonBottomInset: CGFloat = -40
-        static let collectionViewrRatio: CGFloat = 3.75
+        static let collectionViewRatio: CGFloat = 3.75
     }
 }

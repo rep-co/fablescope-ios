@@ -77,7 +77,7 @@ private extension MainScreenViewController {
     }
     
     @objc func didTapCreateButton() {
-        navigationController?.pushViewController(FromScreenViewController(), animated: true)
+        navigationController?.pushViewController(FormScreenViewController(), animated: true)
     }
 }
 
