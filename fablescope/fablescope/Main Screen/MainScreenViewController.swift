@@ -5,6 +5,7 @@ final class MainScreenViewController: UIViewController {
     private let createButton = MenuButton()
     private let buttonStackView = UIStackView()
     private let backgroundImageView = UIImageView()
+    private lazy var router: MainRouter = MainRouterImpl(controller: self)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -77,7 +78,7 @@ private extension MainScreenViewController {
     }
     
     @objc func didTapCreateButton() {
-        navigationController?.pushViewController(FormScreenViewController(), animated: true)
+        router.openFormScreenViewController()
     }
 }
 

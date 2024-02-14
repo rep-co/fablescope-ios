@@ -3,37 +3,37 @@ import UIKit
 final class FormScreenViewController: UIViewController {
     private let submitButton = SubmitButton()
     
-    let data = [
-        CollectionViewCell.ViewModel(image: .witchHat),
-        CollectionViewCell.ViewModel(image: .magicWandIcon),
-        CollectionViewCell.ViewModel(image: .crown),
-        CollectionViewCell.ViewModel(image: .witchHat),
-        CollectionViewCell.ViewModel(image: .crown),
-        CollectionViewCell.ViewModel(image: .magicWandIcon),
-        CollectionViewCell.ViewModel(image: .witchHat),
-        CollectionViewCell.ViewModel(image: .magicWandIcon),
-        CollectionViewCell.ViewModel(image: .crown),
-        CollectionViewCell.ViewModel(image: .witchHat),
-        CollectionViewCell.ViewModel(image: .crown),
-        CollectionViewCell.ViewModel(image: .magicWandIcon),
-        CollectionViewCell.ViewModel(image: .witchHat),
-        CollectionViewCell.ViewModel(image: .magicWandIcon),
-        CollectionViewCell.ViewModel(image: .crown),
-        CollectionViewCell.ViewModel(image: .witchHat),
-        CollectionViewCell.ViewModel(image: .crown),
-        CollectionViewCell.ViewModel(image: .magicWandIcon),
-        CollectionViewCell.ViewModel(image: .witchHat),
-        CollectionViewCell.ViewModel(image: .magicWandIcon),
-        CollectionViewCell.ViewModel(image: .crown),
-        CollectionViewCell.ViewModel(image: .witchHat),
-        CollectionViewCell.ViewModel(image: .crown),
-        CollectionViewCell.ViewModel(image: .magicWandIcon)
+    var data = [
+        CollectionViewCell.ViewModel(image: .witchHat, isSelected: false),
+        CollectionViewCell.ViewModel(image: .magicWandIcon, isSelected: false),
+        CollectionViewCell.ViewModel(image: .crown, isSelected: false),
+        CollectionViewCell.ViewModel(image: .witchHat, isSelected: false),
+        CollectionViewCell.ViewModel(image: .crown, isSelected: false),
+        CollectionViewCell.ViewModel(image: .magicWandIcon, isSelected: false),
+        CollectionViewCell.ViewModel(image: .witchHat, isSelected: false),
+        CollectionViewCell.ViewModel(image: .magicWandIcon, isSelected: false),
+        CollectionViewCell.ViewModel(image: .crown, isSelected: false),
+        CollectionViewCell.ViewModel(image: .witchHat, isSelected: false),
+        CollectionViewCell.ViewModel(image: .crown, isSelected: false),
+        CollectionViewCell.ViewModel(image: .magicWandIcon, isSelected: false),
+        CollectionViewCell.ViewModel(image: .witchHat, isSelected: false),
+        CollectionViewCell.ViewModel(image: .magicWandIcon, isSelected: false),
+        CollectionViewCell.ViewModel(image: .crown, isSelected: false),
+        CollectionViewCell.ViewModel(image: .witchHat, isSelected: false),
+        CollectionViewCell.ViewModel(image: .crown, isSelected: false),
+        CollectionViewCell.ViewModel(image: .magicWandIcon, isSelected: false),
+        CollectionViewCell.ViewModel(image: .witchHat, isSelected: false),
+        CollectionViewCell.ViewModel(image: .magicWandIcon, isSelected: false),
+        CollectionViewCell.ViewModel(image: .crown, isSelected: false),
+        CollectionViewCell.ViewModel(image: .witchHat, isSelected: false),
+        CollectionViewCell.ViewModel(image: .crown, isSelected: false),
+        CollectionViewCell.ViewModel(image: .magicWandIcon, isSelected: false)
     ]
     private let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
-        let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        cv.translatesAutoresizingMaskIntoConstraints = false
-        return cv
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        return collectionView
     }()
 
     override func viewDidLoad() {
@@ -99,8 +99,8 @@ extension FormScreenViewController: UICollectionViewDataSource, UICollectionView
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let cell = collectionView.cellForItem(at: indexPath) as? CollectionViewCell
-        cell?.isSelectedCell.toggle()
+        data[indexPath.row] = .init(image: data[indexPath.row].image, isSelected:  !data[indexPath.row].isSelected)
+        collectionView.reloadData()
     }
 }
 

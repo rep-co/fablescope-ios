@@ -4,12 +4,14 @@ final class CollectionViewCell: UICollectionViewCell {
 
     struct ViewModel {
         var image: UIImage
+        var isSelected: Bool
     }
 
     var data: ViewModel? {
         didSet {
             guard let data else { return }
             cellImage.image = data.image
+            isSelectedCell = data.isSelected
         }
     }
 
