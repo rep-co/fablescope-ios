@@ -1,7 +1,7 @@
 import UIKit
 
 final class SubmitButton: UIControl {
-    private let label = UILabel()
+    private let transitionButtonLabel = UILabel()
 
     override init(frame: CGRect) {
         super.init(frame: .zero)
@@ -20,12 +20,12 @@ private extension SubmitButton {
         setupSubmitButton()
         setupConstraints()
         setupLabel()
-        self.layer.cornerRadius = 16
+        self.layer.cornerRadius = 6
     }
 
     func addSubwiews() {
-        addSubview(label)
-        label.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(transitionButtonLabel)
+        transitionButtonLabel.translatesAutoresizingMaskIntoConstraints = false
     }
 
     func setupSubmitButton() {
@@ -35,18 +35,18 @@ private extension SubmitButton {
     }
 
     func setupLabel() {
-        label.textColor = .white
-        label.textAlignment = .center
-        label.font = .pacificoRegular
-        label.text = "Готово"
+        transitionButtonLabel.textColor = .white
+        transitionButtonLabel.textAlignment = .center
+        transitionButtonLabel.font = .pacificoRegular
+        transitionButtonLabel.text = "Готово"
     }
 
     func setupConstraints() {
         NSLayoutConstraint.activate([
-            label.bottomAnchor.constraint(equalTo: self.bottomAnchor),
-            label.topAnchor.constraint(equalTo: self.topAnchor),
-            label.rightAnchor.constraint(equalTo: self.rightAnchor),
-            label.leftAnchor.constraint(equalTo: self.leftAnchor)
+            transitionButtonLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            transitionButtonLabel.topAnchor.constraint(equalTo: self.topAnchor),
+            transitionButtonLabel.rightAnchor.constraint(equalTo: self.rightAnchor),
+            transitionButtonLabel.leftAnchor.constraint(equalTo: self.leftAnchor)
         ])
     }
 }

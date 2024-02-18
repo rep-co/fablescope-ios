@@ -3,7 +3,7 @@ import UIKit
 final class FormScreenViewController: UIViewController {
     private let submitButton = SubmitButton()
     
-    var data = [
+    private var data = [
         CollectionViewCell.ViewModel(image: .witchHat, isSelected: false),
         CollectionViewCell.ViewModel(image: .magicWandIcon, isSelected: false),
         CollectionViewCell.ViewModel(image: .crown, isSelected: false),
@@ -45,27 +45,27 @@ final class FormScreenViewController: UIViewController {
     }
 }
 
-private extension FormScreenViewController{
+private extension FormScreenViewController {
 
-    func setupCollectionView(){
+    func setupCollectionView() {
         collectionView.delegate = self
         collectionView.dataSource = self
     }
 
     func setupUI() {
-        title = "Выбери все что хочешь"
+        title = Const.title
         collectionView.register(CollectionViewCell.self, forCellWithReuseIdentifier: "cell")
-    }
-
-    func addSubviews() {
-        view.addSubview(collectionView)
         collectionView.backgroundColor = .white
-        view.addSubview(submitButton)
-        submitButton.translatesAutoresizingMaskIntoConstraints = false
         navigationController?.navigationBar.titleTextAttributes = [
             .foregroundColor: UIColor.black,
             .font: UIFont.pacificoRegular
         ]
+    }
+
+    func addSubviews() {
+        view.addSubview(collectionView)
+        view.addSubview(submitButton)
+        submitButton.translatesAutoresizingMaskIntoConstraints = false
     }
 
     func setupConstraints() {
@@ -93,7 +93,9 @@ extension FormScreenViewController: UICollectionViewDataSource, UICollectionView
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CollectionViewCell
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? CollectionViewCell else {
+            return UICollectionViewCell()
+        }
         cell.data = self.data[indexPath.row]
         return cell
     }
@@ -106,7 +108,9 @@ extension FormScreenViewController: UICollectionViewDataSource, UICollectionView
 
 extension FormScreenViewController: UICollectionViewDelegateFlowLayout {
 
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.frame.width/Const.collectionViewRatio, height: collectionView.frame.width/Const.collectionViewRatio)
     }
 
@@ -122,6 +126,7 @@ extension FormScreenViewController: UICollectionViewDelegateFlowLayout {
 extension FormScreenViewController {
 
     private enum Const {
+        static let title = "Выбери все что хочешь"
         static let createButtonLeftInset: CGFloat = 20
         static let createButtonRightInset: CGFloat = -20
         static let createButtonHeight: CGFloat = 59
