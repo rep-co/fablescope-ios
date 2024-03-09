@@ -14,7 +14,6 @@ final class SubmitButton: UIControl {
 }
 
 private extension SubmitButton {
-
     func setupUI() {
         addSubwiews()
         setupSubmitButton()
@@ -50,3 +49,4 @@ private extension SubmitButton {
         ])
     }
 }
+

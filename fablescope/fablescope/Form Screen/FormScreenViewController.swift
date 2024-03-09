@@ -46,7 +46,6 @@ final class FormScreenViewController: UIViewController {
 }
 
 private extension FormScreenViewController {
-
     func setupCollectionView() {
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -69,6 +68,7 @@ private extension FormScreenViewController {
     }
 
     func setupConstraints() {
+        collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 50, right: 0)
         NSLayoutConstraint.activate([
             submitButton.heightAnchor.constraint(equalToConstant: Const.createButtonHeight),
             submitButton.rightAnchor.constraint(equalTo: view.rightAnchor,
@@ -87,7 +87,6 @@ private extension FormScreenViewController {
 }
 
 extension FormScreenViewController: UICollectionViewDataSource, UICollectionViewDelegate {
-
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return data.count
     }
@@ -107,7 +106,6 @@ extension FormScreenViewController: UICollectionViewDataSource, UICollectionView
 }
 
 extension FormScreenViewController: UICollectionViewDelegateFlowLayout {
-
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -124,7 +122,6 @@ extension FormScreenViewController: UICollectionViewDelegateFlowLayout {
 }
 
 extension FormScreenViewController {
-
     private enum Const {
         static let title = "Выбери все что хочешь"
         static let createButtonLeftInset: CGFloat = 20

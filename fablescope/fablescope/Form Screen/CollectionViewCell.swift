@@ -11,17 +11,17 @@ final class CollectionViewCell: UICollectionViewCell {
         didSet {
             guard let data else { return }
             cellImage.image = data.image
-            isSelectedCell = data.isSelected
+            onCellSelection  = data.isSelected
         }
     }
 
-    var isSelectedCell: Bool = false {
+    var onCellSelection : Bool = false {
         didSet {
             setupDidSet()
         }
     }
 
-    private let  cellImage: UIImageView = {
+    private let cellImage: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFit
@@ -44,7 +44,6 @@ final class CollectionViewCell: UICollectionViewCell {
 // MARK: - setup view
 
 private extension CollectionViewCell {
-
     func setupUI() {
         layer.cornerRadius = 16
         layer.masksToBounds = true
@@ -66,7 +65,7 @@ private extension CollectionViewCell {
     }
 
     func setupDidSet() {
-        if !isSelectedCell {
+        if !onCellSelection  {
             backgroundColor = .fableGreen
             cellImage.tintColor = .white
             layer.borderWidth = 0
