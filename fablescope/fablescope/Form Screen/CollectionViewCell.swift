@@ -11,11 +11,11 @@ final class CollectionViewCell: UICollectionViewCell {
         didSet {
             guard let data else { return }
             cellImage.image = data.image
-            onCellSelection  = data.isSelected
+            isCellSelected  = data.isSelected
         }
     }
 
-    var onCellSelection : Bool = false {
+    var isCellSelected : Bool = false {
         didSet {
             setupDidSet()
         }
@@ -65,7 +65,7 @@ private extension CollectionViewCell {
     }
 
     func setupDidSet() {
-        if !onCellSelection  {
+        if !isCellSelected  {
             backgroundColor = .fableGreen
             cellImage.tintColor = .white
             layer.borderWidth = 0
