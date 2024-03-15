@@ -1,6 +1,6 @@
 import Foundation
 
-struct Welcome: Codable {
+struct FormResponse: Codable {
     let categories: [Category]
 }
 
