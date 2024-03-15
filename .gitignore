@@ -89,3 +89,5 @@ fastlane/test_output
 
 iOSInjectionProject/
 fablescope/.DS_Store
+fablescope/Pods
+fablescope/Pods
