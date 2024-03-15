@@ -1,6 +1,6 @@
 import Foundation
 
-struct Welcome: Codable {
+struct ButtonFormScreen: Codable {
     let categories: [Category]
 }
 
@@ -16,7 +16,6 @@ struct Tag: Codable {
     let description: String
     let iconSVG: String
     
-
     enum CodingKeys: String, CodingKey {
         case id
         case name
