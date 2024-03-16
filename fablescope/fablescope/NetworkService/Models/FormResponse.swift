@@ -1,6 +1,6 @@
 import Foundation
 
-struct ButtonFormScreen: Codable {
+struct FormResponse: Codable {
     let categories: [Category]
 }
 
