@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -20,6 +20,8 @@
 		6A3ED1412B0CF985006B2803 /* Pacifico-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6A3ED1402B0CF985006B2803 /* Pacifico-Regular.ttf */; };
 		6AA6AAA42B06468500792F80 /* MenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA6AAA32B06468500792F80 /* MenuButton.swift */; };
 		A79ADB322B345479001D052D /* MainScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79ADB312B345479001D052D /* MainScreenRouter.swift */; };
+		A7DE85712BA4F990004A9064 /* SVGKit in Frameworks */ = {isa = PBXBuildFile; productRef = A7DE85702BA4F990004A9064 /* SVGKit */; };
+		A7DE85732BA4F990004A9064 /* SVGKitSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A7DE85722BA4F990004A9064 /* SVGKitSwift */; };
 		A7EBEBF32B3987AD00DCE047 /* FairyTaleScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EBEBF22B3987AD00DCE047 /* FairyTaleScreenController.swift */; };
 		A7EBEBF52B3987C100DCE047 /* FairyTaleScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EBEBF42B3987C100DCE047 /* FairyTaleScreenRouter.swift */; };
 /* End PBXBuildFile section */
@@ -49,6 +51,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7DE85732BA4F990004A9064 /* SVGKitSwift in Frameworks */,
+				A7DE85712BA4F990004A9064 /* SVGKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,6 +155,10 @@
 			dependencies = (
 			);
 			name = fablescope;
+			packageProductDependencies = (
+				A7DE85702BA4F990004A9064 /* SVGKit */,
+				A7DE85722BA4F990004A9064 /* SVGKitSwift */,
+			);
 			productName = fablescope;
 			productReference = 6A2F8E402B03BA5100D05A14 /* fablescope.app */;
 			productType = "com.apple.product-type.application";
@@ -179,6 +187,9 @@
 				Base,
 			);
 			mainGroup = 6A2F8E372B03BA5100D05A14;
+			packageReferences = (
+				A7DE856F2BA4F98F004A9064 /* XCRemoteSwiftPackageReference "SVGKit" */,
+			);
 			productRefGroup = 6A2F8E412B03BA5100D05A14 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -431,6 +442,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A7DE856F2BA4F98F004A9064 /* XCRemoteSwiftPackageReference "SVGKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SVGKit/SVGKit";
+			requirement = {
+				kind = exactVersion;
+				version = 3.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A7DE85702BA4F990004A9064 /* SVGKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A7DE856F2BA4F98F004A9064 /* XCRemoteSwiftPackageReference "SVGKit" */;
+			productName = SVGKit;
+		};
+		A7DE85722BA4F990004A9064 /* SVGKitSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A7DE856F2BA4F98F004A9064 /* XCRemoteSwiftPackageReference "SVGKit" */;
+			productName = SVGKitSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 6A2F8E382B03BA5100D05A14 /* Project object */;
 }
